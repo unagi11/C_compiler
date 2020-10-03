@@ -1,5 +1,6 @@
 %{
      #include <stdio.h>
+     #include <stdlib.h>
      int line_no = 1;
      int yyerror(char *s);
      int yylex();
@@ -343,12 +344,13 @@ extern char *yytext;
 int yyerror(char *s) 
 {
      printf("line %d: %s near %s \n", line_no, s, yytext);
+     exit(1);
 }
 
 int main()
 {
      yyparse();
-     printf("프로그램 종료\n");
+     printf("검사 완료\n");
 }
 
 int yywrap()
