@@ -278,14 +278,14 @@ A_ID *setDeclaratorTypeAndKind (A_ID *id, A_TYPE *t, ID_KIND k) { // set declara
 }
 
 A_ID *setFunctionDeclaratorSpecifier (A_ID *id, A_SPECIFIER *p) { // check function declarator and return type
-	
 	A_ID *a;
 	// check storage class
 	if (p -> stor)
 		syntax_error(25);
+
 	setDefaultSpecifier(p);
 	// check function identifier immediately before '('
-	if (id -> type -> kind != T_FUNC) {
+	if (id -> type == 0 || id -> type -> kind != T_FUNC) {
 		syntax_error(21);
 		return (id);
 	} else {

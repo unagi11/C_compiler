@@ -489,31 +489,12 @@ void print_current_id_list () {
 		id = id -> prev;
 	}
 	printf("NULL\n");
-
 }
 
 int yyerror(char *s) 
 {
 	printf("line %d: %s near %s \n", line_no, s, yytext);
 	exit(1);
-}
-
-void main(int argc, char *argv[]) { //적당히 고쳐서 사용하세요
-	
-//	printf("main start..\n");
-
-/*	if ((yyin = fopen(argv[argc-1],"r"))==NULL){
-		printf("can not open input file: %s\n",argv[argc-1]);
-		exit(1);
-	} */
-
-	initialize();
-	yyparse();
-	
-	if (!syntax_err) {
-		printf("no error\n");
-		print_ast(root); // "print.c" function
-	}
 }
 
 int yywrap()

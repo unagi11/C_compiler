@@ -17,7 +17,6 @@ extern A_ID *current_id;
 
 char *makeString();
 int checkIdentifier();
-
 %}
 
 %%
