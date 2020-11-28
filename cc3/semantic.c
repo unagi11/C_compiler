@@ -128,6 +128,7 @@ A_TYPE *sem_expression(A_NODE *node) {
 					semantic_error(38, node->line, id->name);
 					break;
 			}
+			break;
 		case N_EXP_INT_CONST : 
 			result=int_type; 
 			break;
