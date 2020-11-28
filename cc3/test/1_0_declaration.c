@@ -1,4 +1,4 @@
-auto float a = 3.1234;
+float a;
 int i, j = 10;
 
 int func (int c, ...) {

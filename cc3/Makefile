@@ -1,5 +1,5 @@
 a.out : y.tab.c lex.yy.c
-	gcc y.tab.c lex.yy.c print.c main.c -w
+	gcc y.tab.c lex.yy.c print.c main.c semantic.c print_sem.c -m32 -w -g
 
 y.tab.c : yacc.y
 	yacc -d yacc.y

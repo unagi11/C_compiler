@@ -5,9 +5,6 @@ line			[\n]
 ws				{delim}+
 
 %{
-#define YYSTYPE_IS_DECLARED 1
-#define YYSTYPE long long
-
 #include "y.tab.h"
 #include "type.h"
 
