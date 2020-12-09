@@ -3,3 +3,4 @@
 
 # 사용법
 yacc, flex설치후 Makefile 실행
+a.out < test.c
