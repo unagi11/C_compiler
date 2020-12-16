@@ -1,4 +1,0 @@
-main()
-{
-    static int a;
-}
