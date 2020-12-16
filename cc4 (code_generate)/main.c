@@ -26,7 +26,7 @@ void main(int argc, char *argv[]) { //적당히 고쳐서 사용하세요
 		exit(1);
 
 	printf("syntax analysis end (no error)\n");
-	print_ast(root); // "print.c" function
+//	print_ast(root); // "print.c" function
 
 	printf("\nstart semantic analysis\n");
 	semantic_analysis(root);
@@ -35,7 +35,7 @@ void main(int argc, char *argv[]) { //적당히 고쳐서 사용하세요
 		exit(1);
 
 	printf("semantic analysis end (no error)\n");
-	print_sem_ast(root);
+//	print_sem_ast(root);
 
 	if ((fout=fopen("a.asm","w+")) == NULL) {
 		printf("can not open output file: a.asm\n"); 
