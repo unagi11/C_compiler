@@ -449,7 +449,8 @@ int sem_statement(A_NODE *node, int addr, A_TYPE *ret, BOOLEAN sw, BOOLEAN brk, 
 				semantic_error(71,node->line); 
 			lit=getTypeAndValueOfExpression(node->llink); 
 			if (isIntegralType(lit.type))
-				node->llink=lit.value.i;
+				;
+//				node->llink=lit.value.i; some problem exist
 			else 
 				semantic_error(51,node->line);
 			local_size=sem_statement(node->rlink,addr,ret,sw,brk,cnt);

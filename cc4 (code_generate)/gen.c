@@ -108,6 +108,7 @@ void gen_expression(A_NODE *node)
 								gen_code_i(LOD, id->level, id->address);
 								break;
 						case T_STRUCT:
+							gen_error(24, node->line, "T_STRUCT");
 						case T_UNION:
 								gen_code_i(LDA, id->level, id->address);
 								i=id->type->size;
@@ -170,8 +171,9 @@ void gen_expression(A_NODE *node)
 			gen_code_i(CAL,0,0);
 			break;
 		case N_EXP_STRUCT :
-			gen_error(24,node->line,node->name);
-		/*	gen_expression_left(node->llink);
+			gen_error(24,node->line,"N_EXP_STRUCT");
+			/*
+			gen_expression_left(node->llink);
 			id=node->rlink;
 			if(id->address>0) {
 				gen_code_i(LITI,0,id->address);
@@ -183,8 +185,8 @@ void gen_expression(A_NODE *node)
 					gen_code_i(LDIB,0,0);
 				else
 					gen_code_i(LDI,0, i%4?i/4+1:i/4);
-			}*/
-			break;
+			}
+			break;*/
 		case N_EXP_ARROW:
 			gen_expression(node->llink);
 			id=node->rlink;
@@ -631,7 +633,7 @@ void gen_statement(A_NODE *node, int cont_label, int break_label, A_SWITCH sw[],
 			gen_label_number(l2);
 			break;
 		case N_STMT_SWITCH:
-			gen_error(24,node->line,node->name);
+			gen_error(24,node->line,"N_STMT_SWITCH");
 /*			gen_expression(node->llink);
 			gen_code_l(SWITCH, 0,l1=get_label());
 			gen_code_l(JMP,0,l2=get_label());
